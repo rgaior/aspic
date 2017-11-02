@@ -1,0 +1,8 @@
+
+    a_rms = np.append(a_rms, rms)
+    a_gain = np.append(a_gain,gbin)
+
+resfolder = constant.resultfolder + 'musigma/'
+outname = 'meas1'
+np.savez(resfolder + outname, gbin=a_gain, rms= a_rms)
+#print 'rms = ' , 

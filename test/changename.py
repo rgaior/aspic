@@ -1,0 +1,15 @@
+import os 
+import glob as glob
+
+#basefolder = '/Users/gaior/DAMIC/data/elec/20171019/bruit19_10/connectorandground/'
+basefolder = '/Users/gaior/DAMIC/data/elec/20171020/meas2/'
+
+fnames = glob.glob(basefolder + 'DAMIC*')
+for f in fnames:
+    print 'oldname = ' , f
+    newname= f.replace(' ','_')
+    newname= newname.replace('-','_')
+    print 'newname = ', newname
+    os.rename(f, newname)
+
+
