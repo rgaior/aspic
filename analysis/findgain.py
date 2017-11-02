@@ -1,3 +1,7 @@
+############################
+## code to write the gain ##
+## in np files            ##
+############################
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
@@ -11,8 +15,6 @@ import utils
 import constant
 
 basefolder = constant.datafolder + '/gain/'
-
-
 
 
 fgain1 = basefolder + 'gain1.txt'

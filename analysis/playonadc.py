@@ -1,3 +1,8 @@
+############################
+## code to try things out ##
+## like FFT or grouping   ##
+## the bins etc           ##
+############################
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
@@ -11,15 +16,14 @@ sys.path.append(utilspath)
 import utils
 import constant
 
-#basefolder = constant.datafolder + '/20171019/bruit19_10/'
+# check on the file /utils/constant.py that you put the right folder
 basefolder = constant.datafolder + '/20171020/meas1/'
-#confolder = '/connectorandground/'
-#cablefolder = '/cableandground/'
 
 gain = '0000'
 #file = basefolder + confolder + '/DAMIC_2017_10_19_' + constant.corr20171019bruitconnect[gain] + '.txt'
 file = basefolder + '/DAMIC_2017_10_20_' + constant.g20171020meas1[gain] + '.txt'
 #file = basefolder + cablefolder + '/DAMIC_2017_10_19_' + constant.corr20171019bruitcable[gain] + '.txt'
+
 [rep, adc1, adc2] = utils.readadcfile(file)
 print 'rms1 = ' , np.std(adc1)
 print 'rms2 = ' , np.std(adc2)
@@ -61,27 +65,3 @@ plt.semilogy(freq/1e3, spec1)
 
 
 plt.show()
-#print newadc
-
-# figtrace = plt.figure()
-# plt.plot(rep,adc1-np.mean(adc1))
-# plt.plot(rep,adc2-np.mean(adc2))
-# plt.xlabel('time [a.u.]')
-# plt.ylabel('ADU')
-# plt.savefig(constant.plotfolder + '/adc1adc2.png')
-# figtracezoom = plt.figure()
-# plt.plot(rep,adc1-np.mean(adc1),'.-')
-# plt.plot(rep,adc2-np.mean(adc2),'.-')
-# plt.xlabel('time [a.u.]')
-# plt.ylabel('ADU')
-# plt.xlim(0,1000)
-# plt.savefig(constant.plotfolder + '/adc1adc2zoom2.png')
-# figcorrel = plt.figure()
-# plt.plot(adc1,adc2,'.')
-# plt.xlabel('ADU')
-# plt.ylabel('ADU')
-# plt.savefig(constant.plotfolder + '/adc1adc2correl.png')
-
-
-
-# plt.show()
